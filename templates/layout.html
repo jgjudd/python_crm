@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CRM Oklahoma</title>
+  </head>
+  <body>
+    <nav class="navbar top-nav">
+      <div class="navbar-brand">
+        <a href="#" class="navbar-link">Aqueduct CRM</a>
+      </div>
+      <div class="">
+        <input type="text" name="search-bar" placeholder="Search" class="search-bar">
+        <a href="#" class="navbar-link">Log In</a>
+      </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+          <nav class="col-md-2 d-none d-md-block sidebar side-nav">
+            <br />
+            <div class="navbar-sticky flex-column">
+              <a href="{{ url_for('index') }}">Dashboard</a>
+              <a href="{{ url_for('cases') }}">Cases</a>
+              <a href="{{ url_for('schedule') }}">Schedule</a>
+              <a href="{{ url_for('messenger') }}">Messenger</a>
+              <a href="{{ url_for('reports') }}">Reports</a>
+              <a href="{{ url_for('tools') }}">Tools</a>
+              <a href="{{ url_for('settings') }}">Settings</a>
+            </div>
+          </nav>
+          <div class="main-content">
+              {% block content %}{% endblock %}
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
+
+<style media="screen">
+  .button {
+    float: right;
+  }
+
+  .top-nav {
+    background-color: darkslateblue;
+    opacity: 85%;
+    min-height: 3em;
+    border-bottom: 2px solid grey;
+  }
+
+  .top-nav button {
+    float: right;
+  }
+
+  .side-nav {
+    background-color: gainsboro;
+    border-right: 2px solid grey;
+    opacity: 60%;
+    position:fixed;
+    left:0;
+    width:200px;
+    height:100%;
+  }
+
+  .side-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+  }
+
+  .side-nav a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+  }
+
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-bar {
+
+  }
+
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+  }
+</style>
